@@ -37,6 +37,7 @@ public class EvaluatorExample
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
+    	System.out.println("EVALUATOR!!!");
         nrOfDocuments++; 
         
         DetectedLanguage detected = JCasUtil.selectSingle(jcas, DetectedLanguage.class);

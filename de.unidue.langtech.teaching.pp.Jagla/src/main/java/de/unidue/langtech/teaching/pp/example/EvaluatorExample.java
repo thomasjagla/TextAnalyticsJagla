@@ -37,10 +37,11 @@ public class EvaluatorExample
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
     {
-        
+    	nrOfDocuments++;
         DetectedLanguage detected = JCasUtil.selectSingle(jcas, DetectedLanguage.class);
         GoldLanguage actual = JCasUtil.selectSingle(jcas, GoldLanguage.class);
-
+        if(actual.getLanguage().equals(detected.getLanguage()))
+        	correct++;
         System.out.println(actual.getLanguage() + " detected as " + detected.getLanguage());
         
         // FIXME: Keep track of correctly classified documents! 
