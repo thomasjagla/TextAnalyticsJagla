@@ -5,6 +5,7 @@ import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.jcas.JCas;
 
 import de.unidue.langtech.teaching.pp.type.MyType;
+import de.unidue.langtech.teaching.pp.type.MyOwnType;
 
 public class LetterAnnotator
     extends JCasAnnotator_ImplBase
@@ -27,7 +28,12 @@ public class LetterAnnotator
         MyType myType = new MyType(jcas);
         myType.setCountLetterE(countLetterE);
         myType.addToIndexes();
+        
+        MyOwnType myOwnType = new MyOwnType(jcas);
+        myOwnType.setCountLetterE(countLetterE);
+        myOwnType.addToIndexes();
 
+        System.out.println("Counted: "+myOwnType.getCountLetterE() +" E's.");
     }
 
 }

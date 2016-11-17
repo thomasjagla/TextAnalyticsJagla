@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
@@ -20,6 +21,10 @@ import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 public class BaselineExample
     extends JCasAnnotator_ImplBase
 {
+	public static final String PARAM_MESSAGE = "PARAM_MESSAGE";
+	@ConfigurationParameter(name = PARAM_MESSAGE, mandatory=true, defaultValue = "PARAM_MESSAGE: Hello im Default")
+	protected String message;
+	
     @Override
     public void process(JCas jcas)
         throws AnalysisEngineProcessException
@@ -63,6 +68,15 @@ public class BaselineExample
     	if(de > en && de >= fr)
     		l.setLanguage("DE");
     	
+    	
     	return l;
+    }
+    
+    @Override
+    public void collectionProcessComplete()
+        throws AnalysisEngineProcessException
+    {
+        super.collectionProcessComplete();
+        System.out.println(message);
     }
 }
