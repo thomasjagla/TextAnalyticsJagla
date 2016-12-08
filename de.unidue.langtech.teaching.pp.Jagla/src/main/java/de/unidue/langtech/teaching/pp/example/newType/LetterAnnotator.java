@@ -24,16 +24,24 @@ public class LetterAnnotator
             }
         }
         
+        int countLetterA = 0;
+        for (char c : documentText.toCharArray()) {
+            if (c == 'a' || c == 'A') {
+                countLetterA++;
+            }
+        }
+        
         //Set this integer value to the property of the new type 'MyType'
         MyType myType = new MyType(jcas);
         myType.setCountLetterE(countLetterE);
         myType.addToIndexes();
         
         MyOwnType myOwnType = new MyOwnType(jcas);
-        myOwnType.setCountLetterE(countLetterE);
+        myOwnType.setCountLetterA(countLetterA);
         myOwnType.addToIndexes();
 
-        System.out.println("Counted: "+myOwnType.getCountLetterE() +" E's.");
+        System.out.println("Counted: "+myType.getCountLetterE() +" E's.");
+        System.out.println("Counted: "+myOwnType.getCountLetterA() +" A's.");
     }
 
 }

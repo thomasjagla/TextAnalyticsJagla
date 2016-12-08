@@ -23,7 +23,7 @@ public class NewReaderTest
     public void testDocumentText()
         throws Exception
     {
-
+    	System.out.println("testDocumentText");
         CollectionReaderDescription reader = getReader();
 
         List<JCas> casObjects = getCasObjects(reader);
@@ -37,6 +37,7 @@ public class NewReaderTest
     public void testExistenceOfGoldAnnotation()
         throws Exception
     {
+    	System.out.println("testExistenceOfGold");
         CollectionReaderDescription reader = getReader();
         List<JCas> casObjects = getCasObjects(reader);
 
@@ -56,8 +57,8 @@ public class NewReaderTest
     public void testDocumentTextPerLanguage()
         throws Exception
     {
+    	System.out.println("testDocumentTextPerLanguage");
         CollectionReaderDescription reader = getReader();
-
         for (JCas jCas : new JCasIterable(reader)) {
             if (languageEquals(jCas, "EN")) {
                 assertEquals("Peter went into the office before they arrived there",
@@ -78,13 +79,18 @@ public class NewReaderTest
     public void testTokenCountPerDocument()
         throws Exception
     {
-
+    	
+    	System.out.println("testTokenCount");
+    	
+    	
         CollectionReaderDescription reader = getReader();
-
+        JCasIterable jCas2 = new JCasIterable(reader);
+        
+        
         for (JCas jCas : new JCasIterable(reader)) {
-
             List<Token> tokens = getTokens(jCas);
             int countTokens = tokens.size();
+            System.out.println("Token count:" + countTokens);
             if (languageEquals(jCas, "EN")) {
                 assertEquals(9, countTokens);
                 // we just test the text of the first and last word
@@ -187,6 +193,7 @@ public class NewReaderTest
     private CollectionReaderDescription getReader()
         throws Exception
     {
+    	System.out.println("getReader");
         return CollectionReaderFactory.createReaderDescription(NewReader.class,
                 NewReader.PARAM_INPUT_FILE, "src/test/resources/test/inputNewFormat.txt");
     }
