@@ -54,28 +54,71 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 		documentText = documentText.replace(':', '\0');
 		
 		System.out.println("Original Text: "+jcas.getDocumentText());
-		System.out.println("Formatted Text: "+documentText);
+		//System.out.println("Formatted Text: "+documentText);
 		
 
 		
 		
-		ArrayList<String> positiveWords = null;
+		ArrayList<String> positiveWords = new ArrayList<String>();
+		ArrayList<String> negativeWords = new ArrayList<String>();
+		ArrayList<String> neutralWords = new ArrayList<String>();
+		
+		//READ WORD FILES
 	    FileReader fileReader = null;
-		try {fileReader = new FileReader(inputPositiveWords);} catch (Exception e) {e.printStackTrace();}
-	    BufferedReader reader = new BufferedReader(fileReader);
-	    
+	    BufferedReader reader = null;
 	    String currentLine="";
-	    try {
+		try {
+			fileReader = new FileReader(inputPositiveWords);
+	    	reader = new BufferedReader(fileReader);
 			while((currentLine=reader.readLine())!=null){
 				positiveWords.add(currentLine);
 			}
-		} catch (IOException e) {e.printStackTrace();}
+			
+			fileReader = new FileReader(inputNeutralWords);
+			reader = new BufferedReader(fileReader);
+			while((currentLine=reader.readLine())!=null){
+				neutralWords.add(currentLine);
+			}
+			
+			
+			fileReader = new FileReader(inputNegativeWords);
+			reader = new BufferedReader(fileReader);
+			while((currentLine=reader.readLine())!=null){
+				negativeWords.add(currentLine);
+			}
+		} catch (Exception e) {e.printStackTrace();}
 	    
+		//CONTAINS
 		int positive, neutral, negative;
 		positive = neutral = negative = 0;
-			
+		
+		for(String s: positiveWords){
+			if(documentText.contains(s.substring(0, s.length()-1)))
+				positive+=Integer.parseInt(s.substring(s.length()-1, s.length()));
+		}
+		for(String s: neutralWords){
+			if(documentText.contains(s.substring(0, s.length()-1)))
+				neutral+=Integer.parseInt(s.substring(s.length()-1, s.length()));
+		}
+		for(String s: negativeWords){
+			if(documentText.contains(s.substring(0, s.length()-1)))
+				negative+=Integer.parseInt(s.substring(s.length()-1, s.length()));
+		}
+		int tendency = 0;
+		
+		if(positive > negative)tendency=1;
+		if(negative > positive)tendency=-1;
+		if(tendency==1 && neutral>positive)tendency=0;
+		if(tendency==-1 && neutral>negative)tendency=0;
+		
 		EvaluationTendency evalTend = new EvaluationTendency(jcas);
-		evalTend.setEvalTend(0);
+		evalTend.setEvalTend(tendency);
+		switch(tendency){
+		case -1: System.out.println("---NEGATIVE---"); break;
+		case 0: System.out.println("---NEUTRAL---"); break;
+		case 1: System.out.println("---POSITIVE---"); break;
+		default: System.out.println("---UNGÜLTIGE TENDENZ---");
+		}
 		evalTend.addToIndexes();
 	}
 
