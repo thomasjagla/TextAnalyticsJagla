@@ -53,7 +53,7 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 		documentText = documentText.replace('?', '\0');
 		documentText = documentText.replace(':', '\0');
 		
-		System.out.println("Original Text: "+jcas.getDocumentText());
+		//System.out.println("Original Text: "+jcas.getDocumentText());
 		//System.out.println("Formatted Text: "+documentText);
 		
 
@@ -113,13 +113,13 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 		
 		EvaluationTendency evalTend = new EvaluationTendency(jcas);
 		evalTend.setEvalTend(tendency);
-		switch(tendency){
-		case -1: System.out.println("---NEGATIVE---"); break;
-		case 0: System.out.println("---NEUTRAL---"); break;
-		case 1: System.out.println("---POSITIVE---"); break;
-		default: System.out.println("---UNGÜLTIGE TENDENZ---");
-		}
-		System.out.println("OpinionEvaluator: Positive: "+positive+", Neutral: "+neutral+", Negative: "+negative);
+//		switch(tendency){
+//		case -1: System.out.println("---NEGATIVE---"); break;
+//		case 0: System.out.println("---NEUTRAL---"); break;
+//		case 1: System.out.println("---POSITIVE---"); break;
+//		default: System.out.println("---UNGÜLTIGE TENDENZ---");
+//		}
+		//System.out.println("OpinionEvaluator: Positive: "+positive+", Neutral: "+neutral+", Negative: "+negative);
 		evalTend.addToIndexes();
 	}
 
