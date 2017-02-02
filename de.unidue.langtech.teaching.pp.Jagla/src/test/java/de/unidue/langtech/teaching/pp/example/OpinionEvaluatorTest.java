@@ -19,8 +19,8 @@ import de.unidue.langtech.teaching.pp.type.EvaluationTendency;
 
 public class OpinionEvaluatorTest {
 	@Test
-	public void testBaselineAnnotationEnglish() throws UIMAException {
-		String text = "Das Produkt gefällt mir sehr. Es ist vielseitig einsetzbar und gefällt meiner Familie. Allerdings nervt die geringe Empfangsreichweite.";
+	public void testBaselineEvaluateOpinion() throws UIMAException {
+		String text = "Das Produkt gefällt mir sehr. Es ist vielseitig einsetzbar und gefällt meiner Familie.";
 		String text2 = "Das Produkt gefällt mir nicht. Es steht nur im Weg rum und vehindert die Sicht.";
 		String text3 = "Das Produkt ist toll, aber es stürzt andauernd ab.";
 		
@@ -29,7 +29,7 @@ public class OpinionEvaluatorTest {
 		jcas.setDocumentText(text);
 		jcas.setDocumentLanguage("de");
 
-		AnalysisEngineDescription opEval = createEngineDescription(OpinionEvaluator.class);
+		AnalysisEngineDescription opEval = createEngineDescription(OpinionEvaluator.class, OpinionEvaluator.PARAM_INPUT_FILE_POSITIVE, "src/test/resources/test/positiveWords.txt", OpinionEvaluator.PARAM_INPUT_FILE_NEUTRAL, "src/test/resources/test/neutralWords.txt", OpinionEvaluator.PARAM_INPUT_FILE_NEGATIVE, "src/test/resources/test/negativeWords.txt");
 		AnalysisEngine lEngine = createEngine(opEval);
 		lEngine.process(jcas);
 
@@ -39,6 +39,7 @@ public class OpinionEvaluatorTest {
 		assertEquals(1 , eval.getEvalTend());
 		
 		//TEXT2
+		jcas = JCasFactory.createJCas();
 		jcas.setDocumentText(text2);
 		jcas.setDocumentLanguage("de");
 
@@ -49,7 +50,8 @@ public class OpinionEvaluatorTest {
 		System.out.println("Evaluation Satz 2: "+eval.getEvalTend()+" (-1: negative; 0:neutral; 1: positive");
 		assertEquals(-1 , eval.getEvalTend());
 		
-		//TEXT2
+		//TEXT3
+		jcas = JCasFactory.createJCas();
 		jcas.setDocumentText(text3);
 		jcas.setDocumentLanguage("de");
 
@@ -57,6 +59,8 @@ public class OpinionEvaluatorTest {
 
 		eval = JCasUtil.selectSingle(jcas, EvaluationTendency.class);
 		System.out.println("Evaluiert: "+jcas.getDocumentText());
+		
+		//Test Sysout each tendency value
 		System.out.println("Evaluation Satz 3: "+eval.getEvalTend()+" (-1: negative; 0:neutral; 1: positive");
 		assertEquals(0 , eval.getEvalTend());
 		

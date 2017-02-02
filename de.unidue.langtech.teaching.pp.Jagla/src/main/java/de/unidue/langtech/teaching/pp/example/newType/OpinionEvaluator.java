@@ -119,6 +119,7 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 		case 1: System.out.println("---POSITIVE---"); break;
 		default: System.out.println("---UNGÜLTIGE TENDENZ---");
 		}
+		System.out.println("OpinionEvaluator: Positive: "+positive+", Neutral: "+neutral+", Negative: "+negative);
 		evalTend.addToIndexes();
 	}
 
