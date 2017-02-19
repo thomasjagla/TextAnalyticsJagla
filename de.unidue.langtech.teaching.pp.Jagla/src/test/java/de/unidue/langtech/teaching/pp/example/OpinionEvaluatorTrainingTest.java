@@ -79,7 +79,7 @@ public class OpinionEvaluatorTrainingTest {
 			if(eval.getEvalTend()==1)correct++;
 			else{
 				wrong++;
-				wrongEvaluated.add(positiveOpinions.get(i));
+				wrongEvaluated.add(("Positive, but evaluated:"+eval.getEvalTend()+" ; "+positiveOpinions.get(i)));
 			}
 		}
 		
@@ -96,7 +96,7 @@ public class OpinionEvaluatorTrainingTest {
 			if(eval.getEvalTend()==0)correct++;
 			else{
 				wrong++;
-				wrongEvaluated.add(neutralOpinions.get(i));
+				wrongEvaluated.add(("Neutral, but evaluated:"+eval.getEvalTend()+" ; "+neutralOpinions.get(i)));
 			}
 		}
 		
@@ -113,7 +113,7 @@ public class OpinionEvaluatorTrainingTest {
 			if(eval.getEvalTend()==(-1))correct++;
 			else{
 				wrong++;
-				wrongEvaluated.add(negativeOpinions.get(i));
+				wrongEvaluated.add(("Negative, but evaluated:"+eval.getEvalTend()+" ; "+negativeOpinions.get(i)));
 			}
 		}
 		

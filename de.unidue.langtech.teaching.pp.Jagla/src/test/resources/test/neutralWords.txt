@@ -7,12 +7,14 @@ durchschnitt2
 eher1
 etwas2
 gemischt1
+gewöhnung1
+hoff1
 hätte1
 in ordnung1
 jedoch2
 klein1
-leider2
 manko1
+mehr erwartet2
 mittelmaß1
 mittelmäßig2
 naja2
@@ -24,10 +26,12 @@ nicht perfekt1
 nicht schlecht1
 nichts besonderes2
 nur1
-ok2
+okay1
 okay2
 potential1
 schwach1
 schwäche1
+solala2
+trotz2
 zweck1
 überbewertet1

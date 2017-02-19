@@ -35,7 +35,7 @@ edel1
 einfach1
 einzigartig1
 elegant1
-empfehl2
+empfehl1
 erlebnis1
 erschwinglich1
 erstaunlich1
@@ -80,13 +80,12 @@ lecker1
 leicht1
 lieb1
 liebenswert1
-mag1
 nett1
+nicht schlecht3
 original1
 perfekt2
 pflicht1
 phantastisch2
-positiv1
 pr‰chtig1
 reizend1
 sauber1
@@ -97,11 +96,12 @@ sehr gut1
 sensationell2
 sicher1
 spannend1
-spaﬂ1
+spaﬂ2
 spektakul‰r2
 spitze1
 stilvoll1
-super2
+super1
+tip top2
 toll1
 top1
 unglaublich1

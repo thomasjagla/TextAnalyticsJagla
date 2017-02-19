@@ -1,42 +1,54 @@
+08152
 abartig2
 abschaum1
 defekt1
 doof1
 dreck1
-enttÃ¤usch1
+enttäusch1
 fehlkauf1
 furchtbar1
 garnicht1
 geht gar nicht1
 geht garnicht1
+geld zurück2
 geschmacklos1
 hohe preise1
 hoher preis1
+immer und immer2
 inkompetent1
 katastrophe2
+keine empfehl2
+keine gut1
 keine1
 keinem empfehlen1
 kompliziert1
-langweilig1
+langweilig2
 letzte mal1
+letzte mal2
 lieblos1
 miserabel1
 miserable1
 muffig1
 müll1
+nicht empfehl2
+nicht empfehl2
+nicht sauber2
 nicht1
 nie wieder1
-niedrige qualitÃ¤t1
+niedrige qualität1
 nix1
+problem2
+reiß1
 roh1
-schlecht1
+scheiße1
+schlecht2
 schlechtest1
 schlimm1
 schmuddelig1
 schrecklich2
-schrott1
-sehr enttÃ¤uschend1
-sehr schlecht1
+schrott2
+sehr enttäuschend1
+sehr schlecht2
 sehr unfreundlich1
 sehr unzufrieden1
 so schlecht1
@@ -45,15 +57,19 @@ tonne1
 traurig1
 unbeschreiblich1
 unfertig1
-unfreundlich1
+unfreundlich2
 ungemütlich1
+ungenau1
 unsicher1
+unterer durchschn2
 unterirdisch1
 unzufrieden1
+unzureichend2
 unübersichtlich1
 verschwend1
 viel zu teuer1
 warten1
+wenig1
 witz1
 wäre1
 zu eng1
