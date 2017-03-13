@@ -16,7 +16,11 @@ import org.apache.uima.util.ProgressImpl;
 
 import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
-public class OpinionReader
+//########################
+//Datei des Praxisprojects
+//########################
+
+public class OpinionReader	//Reader für zeilenweises auslesen
     extends JCasCollectionReader_ImplBase
 {
     public static final String PARAM_INPUT_FILE = "InputFile";

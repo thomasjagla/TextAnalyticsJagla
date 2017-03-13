@@ -15,6 +15,11 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.unidue.langtech.teaching.pp.type.DetectedLanguage;
 
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class BaselineExampleTest {
 	@Test
 	public void testBaselineAnnotationEnglish() throws UIMAException {

@@ -10,7 +10,11 @@ import org.apache.uima.jcas.JCas;
 import de.unidue.langtech.teaching.pp.type.DetectedLanguage;
 import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 import de.unidue.langtech.teaching.pp.type.MyType;
-
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class Printer extends JCasAnnotator_ImplBase {
 
 	@Override

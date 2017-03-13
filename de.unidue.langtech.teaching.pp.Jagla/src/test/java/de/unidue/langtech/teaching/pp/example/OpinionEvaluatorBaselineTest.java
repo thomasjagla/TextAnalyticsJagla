@@ -23,7 +23,10 @@ import de.unidue.langtech.teaching.pp.example.newType.OpinionEvaluator;
 import de.unidue.langtech.teaching.pp.type.DetectedLanguage;
 import de.unidue.langtech.teaching.pp.type.EvaluationTendency;
 
-public class OpinionEvaluatorBaselineTest {
+//########################
+//Datei des Praxisprojects
+//########################
+public class OpinionEvaluatorBaselineTest { //Überprüft zufällige Zuteilung mit java.util.Random
 	@Test
 	public void testTrainingEvaluateOpinion() throws UIMAException {
 		List<String> positiveOpinions = new ArrayList<String>();
@@ -68,6 +71,7 @@ public class OpinionEvaluatorBaselineTest {
 		EvaluationTendency eval;
 		Random random = new Random();
 		
+		//Positive
 		for(int i=0; i<positiveOpinions.size(); i++){
 			jcas = JCasFactory.createJCas();
 			jcas.setDocumentText(positiveOpinions.get(i));
@@ -75,7 +79,7 @@ public class OpinionEvaluatorBaselineTest {
 			
 			
 			EvaluationTendency evalTend = new EvaluationTendency(jcas);
-			evalTend.setEvalTend((random.nextInt(3)-1));
+			evalTend.setEvalTend((random.nextInt(3)-1));						//Zufallszuteilung
 			evalTend.addToIndexes();
 			
 			if(evalTend.getEvalTend()==1)correct++;
@@ -85,13 +89,14 @@ public class OpinionEvaluatorBaselineTest {
 			}
 		}
 		
+		//Neutral
 		for(int i=0; i<neutralOpinions.size(); i++){
 			jcas = JCasFactory.createJCas();
 			jcas.setDocumentText(neutralOpinions.get(i));
 			jcas.setDocumentLanguage("de");
 			
 			EvaluationTendency evalTend = new EvaluationTendency(jcas);
-			evalTend.setEvalTend((random.nextInt(3)-1));
+			evalTend.setEvalTend((random.nextInt(3)-1));						//Zufallszuteilung
 			evalTend.addToIndexes();
 			
 			if(evalTend.getEvalTend()==0)correct++;
@@ -100,14 +105,14 @@ public class OpinionEvaluatorBaselineTest {
 				wrongEvaluated.add(neutralOpinions.get(i));
 			}
 		}
-		
+		//Negative
 		for(int i=0; i<negativeOpinions.size(); i++){
 			jcas = JCasFactory.createJCas();
 			jcas.setDocumentText(negativeOpinions.get(i));
 			jcas.setDocumentLanguage("de");
 			
 			EvaluationTendency evalTend = new EvaluationTendency(jcas);
-			evalTend.setEvalTend((random.nextInt(3)-1));
+			evalTend.setEvalTend((random.nextInt(3)-1));						//Zufallszuteilung
 			evalTend.addToIndexes();
 			
 			if(evalTend.getEvalTend()==(-1))correct++;
@@ -117,6 +122,7 @@ public class OpinionEvaluatorBaselineTest {
 			}
 		}
 		
+		//Auswertung
 		double correctPercent = correct/(wrong+correct)*100;
 		double wrongPercent = wrong/(wrong+correct)*100;
 		System.out.println("Wrong: "+wrong+", Correct: "+correct);

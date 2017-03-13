@@ -16,6 +16,11 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class NewReaderTest
 {
 

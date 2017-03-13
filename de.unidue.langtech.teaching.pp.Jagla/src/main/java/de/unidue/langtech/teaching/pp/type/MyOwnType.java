@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Thu Sep 04 09:09:22 CEST 2014 */
+/* First created by JCasGen Thu Nov 17 11:13:33 CET 2016 */
 package de.unidue.langtech.teaching.pp.type;
 
 import org.apache.uima.jcas.JCas; 
@@ -15,12 +15,12 @@ import org.apache.uima.jcas.tcas.Annotation;
  * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
  *
  */
-public class MyType extends Annotation {
+public class MyOwnType extends Annotation {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(MyType.class);
+  public final static int typeIndexID = JCasRegistry.register(MyOwnType.class);
   /** @generated
    * @ordered 
    */
@@ -34,14 +34,14 @@ public class MyType extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected MyType() {/* intentionally empty block */}
+  protected MyOwnType() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public MyType(int addr, TOP_Type type) {
+  public MyOwnType(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -49,7 +49,7 @@ public class MyType extends Annotation {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public MyType(JCas jcas) {
+  public MyOwnType(JCas jcas) {
     super(jcas);
     readObject();   
   } 
@@ -59,7 +59,7 @@ public class MyType extends Annotation {
    * @param begin offset to the begin spot in the SofA
    * @param end offset to the end spot in the SofA 
   */  
-  public MyType(JCas jcas, int begin, int end) {
+  public MyOwnType(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
     setEnd(end);
@@ -78,25 +78,25 @@ public class MyType extends Annotation {
  
     
   //*--------------*
-  //* Feature: countLetterE
+  //* Feature: countLetterA
 
-  /** getter for countLetterE - gets 
+  /** getter for countLetterA - gets 
    * @generated
    * @return value of the feature 
    */
-  public int getCountLetterE() {
-    if (MyType_Type.featOkTst && ((MyType_Type)jcasType).casFeat_countLetterE == null)
-      jcasType.jcas.throwFeatMissing("countLetterE", "de.unidue.langtech.teaching.pp.type.MyType");
-    return jcasType.ll_cas.ll_getIntValue(addr, ((MyType_Type)jcasType).casFeatCode_countLetterE);}
+  public int getCountLetterA() {
+    if (MyOwnType_Type.featOkTst && ((MyOwnType_Type)jcasType).casFeat_countLetterA == null)
+      jcasType.jcas.throwFeatMissing("countLetterA", "de.unidue.langtech.teaching.pp.type.MyOwnType");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((MyOwnType_Type)jcasType).casFeatCode_countLetterA);}
     
-  /** setter for countLetterE - sets  
+  /** setter for countLetterA - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setCountLetterE(int v) {
-    if (MyType_Type.featOkTst && ((MyType_Type)jcasType).casFeat_countLetterE == null)
-      jcasType.jcas.throwFeatMissing("countLetterE", "de.unidue.langtech.teaching.pp.type.MyType");
-    jcasType.ll_cas.ll_setIntValue(addr, ((MyType_Type)jcasType).casFeatCode_countLetterE, v);}    
+  public void setCountLetterA(int v) {
+    if (MyOwnType_Type.featOkTst && ((MyOwnType_Type)jcasType).casFeat_countLetterA == null)
+      jcasType.jcas.throwFeatMissing("countLetterA", "de.unidue.langtech.teaching.pp.type.MyOwnType");
+    jcasType.ll_cas.ll_setIntValue(addr, ((MyOwnType_Type)jcasType).casFeatCode_countLetterA, v);}    
   }
 
     

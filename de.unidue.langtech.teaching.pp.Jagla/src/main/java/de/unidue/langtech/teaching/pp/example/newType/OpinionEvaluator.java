@@ -21,8 +21,12 @@ import de.unidue.langtech.teaching.pp.type.EvaluationTendency;
 import de.unidue.langtech.teaching.pp.type.MyOwnType;
 import de.unidue.langtech.teaching.pp.type.MyType;
 
+//########################
+//Datei des Praxisprojects
+//########################
 public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 
+	//Laden der Parameterdateien
 	public static final String PARAM_INPUT_FILE_POSITIVE = "InputPositiveWords";
     @ConfigurationParameter(name = PARAM_INPUT_FILE_POSITIVE, mandatory = true)
     private File inputPositiveWords;  
@@ -46,6 +50,7 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
 		String documentText = jcas.getDocumentText();
 
+		//Löschen von Satzzeichen
 		documentText = documentText.toLowerCase();
 		documentText = documentText.replace('.', '\0');
 		documentText = documentText.replace(',', '\0');
@@ -53,6 +58,7 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 		documentText = documentText.replace('?', '\0');
 		documentText = documentText.replace(':', '\0');
 		
+		//Testfälle:
 		//System.out.println("Original Text: "+jcas.getDocumentText());
 		//System.out.println("Formatted Text: "+documentText);
 		
@@ -63,7 +69,7 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 		ArrayList<String> negativeWords = new ArrayList<String>();
 		ArrayList<String> neutralWords = new ArrayList<String>();
 		
-		//READ WORD FILES
+		//Parameterdateien auslesen
 	    FileReader fileReader = null;
 	    BufferedReader reader = null;
 	    String currentLine="";
@@ -88,7 +94,7 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 			}
 		} catch (Exception e) {e.printStackTrace();}
 	    
-		//CONTAINS
+		//Überprüfen ob Teilzeichenketten vorkommen
 		int positive, neutral, negative;
 		positive = neutral = negative = 0;
 		
@@ -104,6 +110,8 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 			if(documentText.contains(s.substring(0, s.length()-1)))
 				negative+=Integer.parseInt(s.substring(s.length()-1, s.length()));
 		}
+		
+		//Tendenzergebnis auswerten/wählen
 		int tendency = 0;
 		
 		if(positive > negative)tendency=1;
@@ -113,13 +121,15 @@ public class OpinionEvaluator extends JCasAnnotator_ImplBase {
 		
 		EvaluationTendency evalTend = new EvaluationTendency(jcas);
 		evalTend.setEvalTend(tendency);
-//		switch(tendency){
-//		case -1: System.out.println("---NEGATIVE---"); break;
-//		case 0: System.out.println("---NEUTRAL---"); break;
-//		case 1: System.out.println("---POSITIVE---"); break;
-//		default: System.out.println("---UNGÜLTIGE TENDENZ---");
-//		}
-		//System.out.println("OpinionEvaluator: Positive: "+positive+", Neutral: "+neutral+", Negative: "+negative);
+		
+		//Ausgabe des Ergebnisses:
+		/*switch(tendency){
+			case -1: System.out.println("---NEGATIVE---"); break;
+			case 0: System.out.println("---NEUTRAL---"); break;
+			case 1: System.out.println("---POSITIVE---"); break;
+			default: System.out.println("---UNGÜLTIGE TENDENZ---");
+		}
+		System.out.println("OpinionEvaluator: Positive Punkte: "+positive+", Neutrale Punkte: "+neutral+", Negative Punkte: "+negative);*/
 		evalTend.addToIndexes();
 	}
 

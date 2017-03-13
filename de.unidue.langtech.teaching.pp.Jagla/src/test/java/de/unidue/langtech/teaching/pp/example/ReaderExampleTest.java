@@ -11,6 +11,11 @@ import org.junit.Test;
 
 import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class ReaderExampleTest {
 
 	@Test

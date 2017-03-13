@@ -22,7 +22,10 @@ import de.unidue.langtech.teaching.pp.example.newType.OpinionEvaluator;
 import de.unidue.langtech.teaching.pp.type.DetectedLanguage;
 import de.unidue.langtech.teaching.pp.type.EvaluationTendency;
 
-public class OpinionEvaluatorTrainingTest {
+//########################
+//Datei des Praxisprojects
+//########################
+public class OpinionEvaluatorTrainingTest { //Überprüft die Tendenz der Trainingsdaten
 	@Test
 	public void testTrainingEvaluateOpinion() throws UIMAException {
 		List<String> positiveOpinions = new ArrayList<String>();
@@ -65,7 +68,7 @@ public class OpinionEvaluatorTrainingTest {
 		AnalysisEngineDescription opEval;
 		AnalysisEngine lEngine;
 		EvaluationTendency eval;
-		
+		//Positive
 		for(int i=0; i<positiveOpinions.size(); i++){
 			jcas = JCasFactory.createJCas();
 			jcas.setDocumentText(positiveOpinions.get(i));
@@ -83,6 +86,7 @@ public class OpinionEvaluatorTrainingTest {
 			}
 		}
 		
+		//Neutral
 		for(int i=0; i<neutralOpinions.size(); i++){
 			jcas = JCasFactory.createJCas();
 			jcas.setDocumentText(neutralOpinions.get(i));
@@ -100,6 +104,7 @@ public class OpinionEvaluatorTrainingTest {
 			}
 		}
 		
+		//Negative
 		for(int i=0; i<negativeOpinions.size(); i++){
 			jcas = JCasFactory.createJCas();
 			jcas.setDocumentText(negativeOpinions.get(i));
@@ -116,7 +121,7 @@ public class OpinionEvaluatorTrainingTest {
 				wrongEvaluated.add(("Negative, but evaluated:"+eval.getEvalTend()+" ; "+negativeOpinions.get(i)));
 			}
 		}
-		
+		//Auswertung
 		double correctPercent = correct/(wrong+correct)*100;
 		double wrongPercent = wrong/(wrong+correct)*100;
 		System.out.println("Wrong: "+wrong+", Correct: "+correct);

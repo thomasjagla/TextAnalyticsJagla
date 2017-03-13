@@ -9,7 +9,10 @@ import de.unidue.langtech.teaching.pp.example.BaselineExample;
 import de.unidue.langtech.teaching.pp.example.OpinionReader;
 import de.unidue.langtech.teaching.pp.example.ReaderExample;
 
-public class OpinionEvaluatorPipeline {
+//########################
+//Datei des Praxisprojects
+//########################
+public class OpinionEvaluatorPipeline {	//Pipeline für OpinionReader und OpinionEvaluator
 
 	public static void main(String[] args) throws Exception {
 		SimplePipeline.runPipeline(CollectionReaderFactory.createReader(

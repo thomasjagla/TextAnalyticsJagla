@@ -13,7 +13,11 @@ import de.unidue.langtech.teaching.pp.example.ReaderExample;
 import de.unidue.langtech.teaching.pp.example.newType.LetterAnnotator;
 import de.unidue.langtech.teaching.pp.ownReaderTest.NewReader;
 import de.unidue.langtech.teaching.pp.ownReaderTest.NewReaderSolution;
-
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class BasicPipeline
 {
 

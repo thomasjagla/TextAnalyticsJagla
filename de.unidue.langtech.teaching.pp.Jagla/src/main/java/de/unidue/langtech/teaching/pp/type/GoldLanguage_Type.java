@@ -13,9 +13,11 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
-/** 
- * Updated by JCasGen Tue Oct 15 15:51:15 CEST 2013
- * @generated */
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class GoldLanguage_Type extends Annotation_Type {
   /** @generated */
   @Override

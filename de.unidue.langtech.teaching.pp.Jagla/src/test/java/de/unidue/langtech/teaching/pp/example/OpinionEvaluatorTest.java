@@ -17,7 +17,10 @@ import de.unidue.langtech.teaching.pp.example.newType.OpinionEvaluator;
 import de.unidue.langtech.teaching.pp.type.DetectedLanguage;
 import de.unidue.langtech.teaching.pp.type.EvaluationTendency;
 
-public class OpinionEvaluatorTest {
+//########################
+//Datei des Praxisprojects
+//########################
+public class OpinionEvaluatorTest {	//Überprüft für jeweils einen positiven, negativen und neutralen Satz die Tendenz
 	@Test
 	public void testBaselineEvaluateOpinion() throws UIMAException {
 		String text = "Das Produkt gefällt mir sehr. Es ist vielseitig einsetzbar und gefällt meiner Familie.";
@@ -60,7 +63,7 @@ public class OpinionEvaluatorTest {
 		eval = JCasUtil.selectSingle(jcas, EvaluationTendency.class);
 		System.out.println("Evaluiert: "+jcas.getDocumentText());
 		
-		//Test Sysout each tendency value
+		//Auswertung
 		System.out.println("Evaluation Satz 3: "+eval.getEvalTend()+" (-1: negative; 0:neutral; 1: positive");
 		assertEquals(0 , eval.getEvalTend());
 		

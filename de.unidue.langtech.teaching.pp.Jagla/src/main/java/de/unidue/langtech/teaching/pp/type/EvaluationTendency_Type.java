@@ -10,6 +10,10 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
+//########################
+//Datei des Praxisprojects
+//########################
+
 /** 
  * Updated by JCasGen Wed Jan 11 12:12:37 CET 2017
  * @generated */

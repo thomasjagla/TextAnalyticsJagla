@@ -21,7 +21,7 @@ import de.unidue.langtech.teaching.pp.type.GoldLanguage;
  * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
  *
  */
-public class ReaderExample
+public class OpinionMiningReader
     extends JCasCollectionReader_ImplBase
 {
 
@@ -35,9 +35,7 @@ public class ReaderExample
     private List<String> lines;
     private int currentLine;
     
-    /* 
-     * initializes the reader
-     */
+    
     @Override
     public void initialize(UimaContext context)
         throws ResourceInitializationException
@@ -54,46 +52,24 @@ public class ReaderExample
     }
     
     
-    /* 
-     * true, if there is a next document, false otherwise
-     */
     public boolean hasNext()
         throws IOException, CollectionException
     {
         return currentLine < lines.size();
     }
     
-    
-    /* 
-     * feeds the next document into the pipeline
-     */
     @Override
     public void getNext(JCas jcas)
         throws IOException, CollectionException
     {
-        // split line into gold standard language and actual text
-        String[] parts = lines.get(currentLine).split("#");
-        
-        // it is always good to do some sanity checks
-        if (parts.length != 2) {
-            throw new IOException("Wrong line format: " + lines.get(currentLine));
-        }
-        
-        // add gold standard value as annotation
+    	jcas.setDocumentText(lines.get(currentLine));
+
         GoldLanguage goldLanguage = new GoldLanguage(jcas);
-        goldLanguage.setLanguage(parts[0]);
+        goldLanguage.setLanguage("DE");
         goldLanguage.addToIndexes();
-        
-        // add actual text of the document
-        jcas.setDocumentText(parts[1]);
-        
         currentLine++;
     }
-
     
-    /* 
-     * informs the pipeline about the current progress
-     */
     public Progress[] getProgress()
     {
         return new Progress[] { new ProgressImpl(currentLine, lines.size(), "lines") };

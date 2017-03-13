@@ -10,10 +10,11 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** 
- * Updated by JCasGen Tue Oct 15 15:51:15 CEST 2013
- * XML source: /home/zesch/workspace_new/de.unidue.langtech.teaching.pp.example/src/main/resources/desc/type/LanguageType.xml
- * @generated */
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class GoldLanguage extends Annotation {
   /** @generated
    * @ordered 

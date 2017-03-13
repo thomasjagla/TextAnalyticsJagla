@@ -13,9 +13,8 @@ import de.unidue.langtech.teaching.pp.type.DetectedLanguage;
 import de.unidue.langtech.teaching.pp.type.GoldLanguage;
 
 /**
- * The baseline always identifies "EN" as the document language.
  * 
- * @author zesch
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
  *
  */
 public class BaselineExample

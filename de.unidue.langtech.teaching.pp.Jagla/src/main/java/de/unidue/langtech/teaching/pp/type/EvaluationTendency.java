@@ -9,7 +9,9 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 import org.apache.uima.jcas.tcas.Annotation;
 
-
+//########################
+//Datei des Praxisprojects
+//########################
 /** 
  * Updated by JCasGen Wed Jan 11 12:12:37 CET 2017
  * XML source: C:/Users/Thomas/Desktop/Textanalysewerkzeuge Workspace/Git Repository/TextAnalyticsJagla/de.unidue.langtech.teaching.pp.Jagla/src/main/resources/desc/type/EvaluationTendency.xml

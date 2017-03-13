@@ -13,9 +13,11 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
-/** 
- * Updated by JCasGen Thu Sep 04 09:09:22 CEST 2014
- * @generated */
+/**
+ * 
+ * IRRELEVANTE DATEI FÜR DAS PRAXISPROJEKT
+ *
+ */
 public class MyType_Type extends Annotation_Type {
   /** @generated 
    * @return the generator for this type
